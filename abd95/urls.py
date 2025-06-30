@@ -33,4 +33,6 @@ urlpatterns = [
     path('residents/', include('residents.urls')),
     path('payments/', include('payments.urls')),
     path('maintenance/', include('maintenance.urls')),
+    path('office/', include('office.urls')),
+   
 ]
