@@ -2,47 +2,50 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>لوحة التحكم - موظف المكتب</title>
+    <title>لوحة التحكم - إدارة المكتب</title>
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #eef1f5;
+        nav {
+            background-color: #2c3e50;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
             margin: 0;
             padding: 0;
         }
-        .header {
-            background-color: #2c3e50;
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
             color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 30px;
-        }
-        .logout-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: red;
-            font-weight: bold;
             text-decoration: none;
-            transition: color 0.2s;
+            font-weight: bold;
         }
-        .logout-link:hover {
-            color: darkred;
+        nav a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h2>لوحة تحكم موظف المكتب</h2>
-    </div>
+<h2>لوحة تحكم إدارة المكتب</h2>
 
-    <div class="container">
-        <p>مرحبًا بك في لوحة التحكم. يمكنك من هنا إدارة الحسابات، الوحدات، المدفوعات، وغيرها.</p>
+<!-- شريط القوائم المخصص بعد تسجيل الدخول -->
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">الرئيسية</a></li>
+        <li><a href="{% url 'complexes:list' %}">المجمعات</a></li>
+        <li><a href="{% url 'units:list' %}">الوحدات</a></li>
+        <li><a href="{% url 'residents:list' %}">السكان</a></li>
+        <li><a href="{% url 'office:logout' %}" style="color: red;">تسجيل الخروج</a></li>
+    </ul>
+</nav>
 
-        <a href="{% url 'office:logout' %}" class="logout-link">تسجيل الخروج</a>
-    </div>
+<div style="padding: 20px;">
+    <p>مرحبًا بك في لوحة التحكم.</p>
+</div>
 
 </body>
 </html>

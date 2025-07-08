@@ -1,7 +1,9 @@
+
 from django.urls import path
+from . import views
 
 app_name = 'residents'
 
 urlpatterns = [
-    # مسارات تطبيق السكان / المستأجرين ستضاف لاحقًا هنا
+    path('login/', views.resident_login_view, name='login'),
 ]

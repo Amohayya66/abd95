@@ -47,7 +47,7 @@ ROOT_URLCONF = 'abd95.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # ← مجلد القوالب الرئيسي
+        'DIRS': [BASE_DIR / 'templates'],  # مجلد القوالب الرئيسي
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,6 +82,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'abd95' / 'static',
+    BASE_DIR / 'static',  # ← الإضافة الجديدة هنا
 ]
 
 # ====== ملفات الوسائط ======

@@ -1,7 +1,9 @@
+
 from django.urls import path
+from django.http import HttpResponse
 
 app_name = 'maintenance'
 
 urlpatterns = [
-    # مسارات تطبيق الصيانة ستضاف لاحقًا هنا
+    path('', lambda request: HttpResponse('<h1>مرحبًا بك في تطبيق الصيانة</h1>'), name='home'),
 ]

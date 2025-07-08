@@ -1,0 +1,29 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل دخول السكان</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div style="max-width: 400px; margin: 100px auto; padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center; color: #333; margin-bottom: 20px;">دخول السكان</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="اسم المستخدم" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <input type="password" name="password" placeholder="كلمة المرور" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #16a085; color: #fff; border: none; border-radius: 5px;">تسجيل الدخول</button>
+            {% if messages %}
+              <div style="color: red; margin-top: 10px;">
+                  {% for message in messages %}
+                      {{ message }}
+                  {% endfor %}
+              </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
+

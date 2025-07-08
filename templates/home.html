@@ -1,3 +1,4 @@
+
 {% load static %}
 {% include 'header.html' %}
 
@@ -5,10 +6,13 @@
   <div style="text-align: center; background-color: white; padding: 40px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px;">
     <h1 style="margin-bottom: 30px; color: #2c3e50;">مرحبًا بك في نظام إدارة المجمعات السكنية</h1>
     <div style="display: flex; flex-direction: column; gap: 15px;">
-      <a href="{% url 'admin_login' %}" style="background-color: #34495e; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px;">
+      <a href="/admin/" style="background-color: #34495e; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px;">
         دخول الإدارة
       </a>
-      <a href="{% url 'resident_login' %}" style="background-color: #16a085; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px;">
+      <a href="{% url 'office:login' %}" style="background-color: #2980b9; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px;">
+        دخول موظف المكتب
+      </a>
+      <a href="{% url 'residents:login' %}" style="background-color: #16a085; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px;">
         دخول السكان
       </a>
     </div>
